@@ -17,9 +17,15 @@ Este projeto é um clone do site Maven AI Solutions, desenvolvido utilizando as 
 - Página de serviços com tabelas de preços e comparativos
 - Página administrativa para visualização de submissões
 
-## Como executar o projeto
+## Como clonar e executar o projeto
 
 ```bash
+# Clonar o repositório
+git clone https://github.com/Luizhp86/maven-ai-clone.git
+
+# Entrar no diretório do projeto
+cd maven-ai-clone
+
 # Instalar dependências
 bun install
 
@@ -30,6 +36,11 @@ bun run dev
 bun run build
 ```
 
+## Demo online
+
+O clone do site pode ser acessado em:
+https://same-pzolw4j506h-latest.netlify.app
+
 ## Deploy
 
 O site está configurado para ser facilmente implantado no Netlify, com suporte para Netlify Forms para lidar com as submissões de formulários.
@@ -37,3 +48,7 @@ O site está configurado para ser facilmente implantado no Netlify, com suporte 
 ## Contato
 
 O formulário de contato está configurado para enviar notificações para luizhenrique.pinotti@gmail.com.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
