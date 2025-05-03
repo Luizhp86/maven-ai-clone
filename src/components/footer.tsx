@@ -2,118 +2,95 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-maven-blue text-white py-12">
-      <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1">
-            <div className="flex flex-col space-y-3">
-              <div className="flex items-center space-x-2">
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="space-y-4 md:w-1/3">
+            <div className="flex items-center space-x-2">
+              <div className="relative h-8 w-8">
                 <Image
-                  src="https://ext.same-assets.com/1677406165/2517037618.png"
-                  alt="Maven AI Logo"
-                  width={40}
-                  height={40}
-                  className="rounded-md"
+                  src="/images/automatizando-logo.png"
+                  alt="Automatizando Logo"
+                  width={32}
+                  height={32}
+                  className="brightness-200 invert"
                 />
               </div>
-              <p className="text-sm md:text-base font-medium mt-4">
-                Agentes de inteligência artificial avançados para empresas e corporações.
-              </p>
-              <p className="text-sm md:text-base font-medium mt-2">
-                Envie-nos um e-mail: <a href="mailto:wellpires@mavenaisolutions.com" className="hover:underline">wellpires@mavenaisolutions.com</a>
-              </p>
+              <span className="text-xl font-bold">Automatizando</span>
             </div>
+            <p className="text-gray-400">
+              Soluções inteligentes para automatizar processos e aumentar a eficiência do seu negócio.
+            </p>
           </div>
 
-          <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Navegação</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/#home" className="text-sm hover:underline">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/#cases" className="text-sm hover:underline">
-                  Cases de sucesso
-                </Link>
-              </li>
-              <li>
-                <Link href="/#como-funciona" className="text-sm hover:underline">
-                  Como funciona
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:w-2/3">
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold">Empresa</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
+                    Serviços
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#cases" className="text-gray-400 hover:text-white transition-colors">
+                    Casos de Sucesso
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacidade" className="text-gray-400 hover:text-white transition-colors">
+                    Política de Privacidade
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Cases</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/casewittel" className="text-sm hover:underline">
-                  Wittel
-                </Link>
-              </li>
-              <li>
-                <Link href="/casetecfil" className="text-sm hover:underline">
-                  Tecfil
-                </Link>
-              </li>
-              <li>
-                <Link href="/casenatacha" className="text-sm hover:underline">
-                  Hiper Natacha
-                </Link>
-              </li>
-            </ul>
-          </div>
+            <div className="space-y-3">
+              <h3 className="text-lg font-semibold">Casos de Sucesso</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/casewittel" className="text-gray-400 hover:text-white transition-colors">
+                    Wittel
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/casetecfil" className="text-gray-400 hover:text-white transition-colors">
+                    Tecfil
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/casenatacha" className="text-gray-400 hover:text-white transition-colors">
+                    Natacha
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div className="col-span-1">
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Termos</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/privacidade" className="text-sm hover:underline">
-                  Política de privacidade
-                </Link>
-              </li>
-            </ul>
-
-            <div className="flex space-x-4 mt-6">
-              <a href="https://www.youtube.com/@WellPiresAI" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="https://ext.same-assets.com/1677406165/4252861238.svg"
-                  alt="YouTube"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a href="https://www.linkedin.com/in/well-pires/" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="https://ext.same-assets.com/1677406165/3387613782.png"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a href="https://www.instagram.com/wellpires.ai/" target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="https://ext.same-assets.com/1677406165/3301625649.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                />
-              </a>
+            <div className="space-y-3 col-span-2 md:col-span-1">
+              <h3 className="text-lg font-semibold">Contato</h3>
+              <ul className="space-y-2">
+                <li className="text-gray-400">
+                  <span className="block">Email:</span>
+                  <a href="mailto:luizhenrique.pinotti@gmail.com" className="hover:text-white transition-colors">
+                    luizhenrique.pinotti@gmail.com
+                  </a>
+                </li>
+                <li className="text-gray-400">
+                  <span className="block">Telefone:</span>
+                  <a href="tel:+5511988776655" className="hover:text-white transition-colors">
+                    +55 (11) 98877-6655
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <Separator className="my-6 bg-white/20" />
-
-        <div className="text-center text-sm">
-          © 2024 Todos os direitos reservados por MAVEN IA SOLUTIONS LTDA
+        <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} Automatizando. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

@@ -1,290 +1,144 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import {
-  MessageSquare,
-  UserPlus,
-  Megaphone,
-  Phone,
-  Users,
-  BarChart
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 
 export function FeaturesSection() {
-  const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
-
+  const sectionRef = useRef<HTMLDivElement>(null);
   const features = [
     {
-      title: "Criação de CRM",
-      description: "Rastreie a jornada do seu lead até a compra de maneira 100% automática, sem depender do seu Closer preencher a CRM.",
-      icon: <UserPlus className="h-6 w-6 text-maven-blue" />,
+      id: 1,
+      title: "Automação Inteligente de Processos",
+      description: "Identifique e automatize processos repetitivos, eliminando etapas manuais e reduzindo o tempo de execução de tarefas.",
+      icon: "/images/automatizando-logo.png"
     },
     {
-      title: "Prospecção Ativa",
-      description: "Agende chamadas diariamente com os seus clientes dos sonhos de maneira automática, sem investir em anúncios.",
-      icon: <Users className="h-6 w-6 text-maven-blue" />,
+      id: 2,
+      title: "Integração entre Sistemas",
+      description: "Conecte diferentes aplicativos e plataformas para garantir um fluxo de dados consistente e eliminar a duplicação de trabalho.",
+      icon: "/images/automatizando-logo.png"
     },
     {
-      title: "Automações de Marketing",
-      description: "Sistemas Plug & Play de Inbound Marketing para nutrir e engajar os seus leads de maneira autônoma.",
-      icon: <Megaphone className="h-6 w-6 text-maven-blue" />,
+      id: 3,
+      title: "Análise de Eficiência",
+      description: "Monitore a performance dos processos automatizados com dashboards intuitivos que mostram o ganho real de produtividade.",
+      icon: "/images/automatizando-logo.png"
     },
     {
-      title: "Chatbots IA",
-      description: "Crie um Agente lA conversacional para converter os seus inbound leads de maneira imediata, elevando a experiência do seu lead em qualquer canal de comunicação.",
-      icon: <MessageSquare className="h-6 w-6 text-maven-blue" />,
-    },
-    {
-      title: "IA de Ligação",
-      description: "Crie Agentes IA realistas para engajar com os seus leads por chamadas telefônicas inbound ou outbound.",
-      icon: <Phone className="h-6 w-6 text-maven-blue" />,
-    },
-    {
-      title: "Consultoria",
-      description: "Te ajudaremos a esclarecer melhor sua oferta e otimizar seu funil de vendas, mostrando o que empresas que faturam 8 dígitos estão fazendo.",
-      icon: <BarChart className="h-6 w-6 text-maven-blue" />,
-    },
+      id: 4,
+      title: "Redução de Erros",
+      description: "Elimine falhas humanas em processos críticos, garantindo consistência e precisão nas operações do dia a dia.",
+      icon: "/images/automatizando-logo.png"
+    }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
       }
-    }
-  };
+    );
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
-  };
+    const featureElements = document.querySelectorAll('.feature-card');
+    featureElements.forEach((el) => {
+      observer.observe(el);
+    });
 
-  const cardHoverVariants = {
-    initial: { y: 0, boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)" },
-    hover: {
-      y: -8,
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      transition: { duration: 0.2, ease: "easeInOut" }
-    }
-  };
-
-  const iconVariants = {
-    initial: { scale: 1, backgroundColor: "rgba(59, 159, 204, 0.1)" },
-    hover: {
-      scale: 1.1,
-      backgroundColor: "rgba(59, 159, 204, 0.2)",
-      transition: { duration: 0.2, type: "spring", stiffness: 300 }
-    }
-  };
-
-  const featureImageVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" }
-    },
-    hover: {
-      scale: 1.1,
-      transition: { duration: 0.2, type: "spring", stiffness: 300 }
-    }
-  };
+    return () => {
+      featureElements.forEach((el) => {
+        observer.unobserve(el);
+      });
+    };
+  }, []);
 
   return (
-    <section id="services" className="py-16 bg-gradient-to-b from-white to-maven-skyblue/10" ref={sectionRef}>
+    <section ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Cresça Exponencialmente</h2>
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Simplifique, Otimize e <span className="text-auto-blue">Transforme</span>
+          </h2>
+          <p className="text-lg text-gray-600">
+            Descubra como a automação inteligente pode impulsionar sua empresa para o próximo nível de eficiência.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="shadow-md border border-gray-100 h-full transition-all">
-                <CardHeader>
-                  <CardTitle className="text-xl">Sistemas Integrados</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Crie um sistema inteligente e preciso que conecte todos os aplicativos utilizados na sua operação para potencializar sua eficiência e visualização.
-                  </p>
-                  <motion.div
-                    className="flex justify-center md:justify-start mt-6 space-x-4"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
-                  >
-                    <motion.div
-                      variants={featureImageVariants}
-                      initial="hidden"
-                      animate={isInView ? "visible" : "hidden"}
-                      whileHover="hover"
-                    >
-                      <Image
-                        src="https://ext.same-assets.com/1677406165/2330711574.svg"
-                        alt="WhatsApp"
-                        width={40}
-                        height={40}
-                      />
-                    </motion.div>
-                    <motion.div
-                      variants={featureImageVariants}
-                      initial="hidden"
-                      animate={isInView ? "visible" : "hidden"}
-                      transition={{ delay: 0.1 }}
-                      whileHover="hover"
-                    >
-                      <Image
-                        src="https://ext.same-assets.com/1677406165/2420184248.svg"
-                        alt="Make"
-                        width={40}
-                        height={40}
-                      />
-                    </motion.div>
-                    <motion.div
-                      variants={featureImageVariants}
-                      initial="hidden"
-                      animate={isInView ? "visible" : "hidden"}
-                      transition={{ delay: 0.2 }}
-                      whileHover="hover"
-                    >
-                      <Image
-                        src="https://ext.same-assets.com/1677406165/1203310267.svg"
-                        alt="CRM"
-                        width={40}
-                        height={40}
-                      />
-                    </motion.div>
-                  </motion.div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="shadow-md border border-gray-100 h-full transition-all">
-                <CardHeader>
-                  <CardTitle className="text-xl">Refinamento</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Nós criamos sistemas visuais e otimizados para constantes refinamentos e atualizações de maneira simples e intuitiva.
-                  </p>
-                  <motion.div
-                    className="flex justify-center mt-6"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="bg-maven-blue/10 text-maven-blue font-bold rounded-full px-6 py-3 text-xl">
-                      40+
-                    </div>
-                  </motion.div>
-                  <p className="text-center text-sm text-maven-blue mt-2">
-                    Integrações Disponíveis
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        <motion.h3
-          className="text-2xl font-bold mb-8 text-center md:text-left"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-        >
-          O que os nossos clientes recebem
-        </motion.h3>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              variants={itemVariants}
-              transition={{ delay: index * 0.1 }}
-              whileHover={cardHoverVariants.hover}
-              initial={cardHoverVariants.initial}
-              className="h-full"
+            <div
+              key={feature.id}
+              className="feature-card bg-white rounded-xl p-6 shadow-lg border border-gray-100 transition-all duration-500 opacity-0 translate-y-8"
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <Card className="shadow-sm border border-gray-100 h-full">
-                <CardHeader className="flex flex-row items-start space-x-4 pb-2">
-                  <motion.div
-                    className="bg-maven-blue/10 p-2 rounded-full"
-                    variants={iconVariants}
-                    initial="initial"
-                    whileHover="hover"
-                  >
-                    {feature.icon}
-                  </motion.div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
+              <div className="w-12 h-12 bg-auto-blue/10 rounded-lg p-2 mb-5 flex items-center justify-center">
+                <Image
+                  src={feature.icon}
+                  alt={`${feature.title} icon`}
+                  width={32}
+                  height={32}
+                  className="text-auto-blue"
+                />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Floating elements (similar to hero section) */}
-        <motion.div
-          className="absolute left-2 bottom-20 w-6 h-6 rounded-full bg-maven-blue/10 hidden md:block"
-          animate={{
-            y: [0, -12, 0],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div
-          className="absolute right-10 top-32 w-4 h-4 rounded-full bg-maven-blue/20 hidden md:block"
-          animate={{
-            y: [0, -8, 0],
-            opacity: [0.2, 0.5, 0.2]
-          }}
-          transition={{
-            duration: 2.5,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-            delay: 0.5
-          }}
-        />
+        <div className="mt-20 bg-gray-50 p-8 rounded-xl shadow border border-gray-100">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Por que escolher a <span className="text-auto-blue">Automatizando</span>?
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-auto-blue/20 text-auto-blue flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <p className="text-gray-700 font-medium">Experiência comprovada</p>
+                    <p className="text-gray-600 text-sm">Mais de 100 processos automatizados com sucesso em diversos segmentos.</p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-auto-blue/20 text-auto-blue flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <p className="text-gray-700 font-medium">Abordagem personalizada</p>
+                    <p className="text-gray-600 text-sm">Soluções desenvolvidas sob medida para as necessidades específicas do seu negócio.</p>
+                  </div>
+                </li>
+                <li className="flex gap-3">
+                  <div className="w-6 h-6 rounded-full bg-auto-blue/20 text-auto-blue flex items-center justify-center flex-shrink-0 mt-0.5">✓</div>
+                  <div>
+                    <p className="text-gray-700 font-medium">Suporte contínuo</p>
+                    <p className="text-gray-600 text-sm">Equipe dedicada para garantir que suas automações funcionem perfeitamente o tempo todo.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="hidden md:block">
+              <div className="relative h-64 bg-auto-blue/5 rounded-lg p-6 flex items-center justify-center">
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute -right-12 -top-12 w-48 h-48 bg-auto-blue/20 rounded-full"></div>
+                  <div className="absolute -left-12 -bottom-12 w-48 h-48 bg-auto-blue/20 rounded-full"></div>
+                </div>
+                <div className="relative z-10 text-center">
+                  <div className="text-5xl font-bold text-auto-blue mb-2">78%</div>
+                  <p className="text-xl font-medium text-gray-800">Redução média de tempo</p>
+                  <p className="text-gray-600">nos processos automatizados</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

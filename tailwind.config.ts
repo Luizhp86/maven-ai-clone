@@ -50,10 +50,10 @@ export default {
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
         },
-        maven: {
-          blue: '#3b9fcc',
-          lightblue: '#93cbe7',
-          navy: '#10245a',
+        auto: {
+          blue: '#2187c5',
+          lightblue: '#6bb4de',
+          navy: '#0e4677',
           skyblue: '#c7e4f3',
           yellow: '#d6c834',
           red: '#c4443c',
