@@ -1,18 +1,21 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HowItWorksSection() {
   return (
     <section id="como-funciona" className="py-16 bg-auto-skyblue/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-lg font-semibold uppercase tracking-wider text-auto-blue">Etapas</h2>
+          <h2 className="text-lg font-semibold uppercase tracking-wider text-auto-blue">
+            Etapas
+          </h2>
           <h3 className="text-3xl md:text-4xl font-bold mt-2">Como funciona</h3>
           <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-            A automação é complicada, mas implementá-la não precisa ser. Simplificaremos o processo para você em 3 etapas.
+            A automação é complicada, mas implementá-la não precisa ser.
+            Simplificaremos o processo para você em 3 etapas.
           </p>
         </div>
 
@@ -56,10 +59,14 @@ export function HowItWorksSection() {
 
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-4">
-            Transformamos o poder da automação inteligente em economia real para o seu negócio.
+            Transformamos o poder da automação inteligente em economia real para
+            o seu negócio.
           </h3>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Na Automatizando, unimos tecnologia de ponta e inteligência artificial para reduzir custos com mão de obra e aumentar a eficiência da sua empresa. Sem complicações, apenas resultados mensuráveis.
+            Na Automatizando, unimos tecnologia de ponta e inteligência
+            artificial para reduzir custos com mão de obra e aumentar a
+            eficiência da sua empresa. Sem complicações, apenas resultados
+            mensuráveis.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
             <div className="bg-white p-8 rounded-lg shadow-md flex items-center justify-center h-64">
@@ -93,7 +100,9 @@ export function HowItWorksSection() {
             </div>
           </div>
           <div className="mt-8 bg-auto-blue text-white py-3 px-4 rounded-md inline-block mx-auto">
-            <p className="text-sm">Automatize seus processos e reduza até 70% dos custos com pessoal</p>
+            <p className="text-sm">
+              Automatize seus processos e reduza até 70% dos custos com pessoal
+            </p>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -21,11 +21,14 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold">Automatizando</span>
-                <span className="text-xs text-gray-400">sua empresa com IA</span>
+                <span className="text-xs text-gray-400">
+                  sua empresa com IA
+                </span>
               </div>
             </div>
             <p className="text-gray-400">
-              Reduza até 70% dos custos com mão de obra através da automação de processos repetitivos com inteligência artificial.
+              Reduza até 70% dos custos com mão de obra através da automação de
+              processos repetitivos com inteligência artificial.
             </p>
           </div>
 
@@ -34,17 +37,26 @@ export function Footer() {
               <h3 className="text-lg font-semibold">Empresa</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="/services"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Serviços
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#cases" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="/#cases"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Casos de Sucesso
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacidade" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="/privacidade"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Política de Privacidade
                   </Link>
                 </li>
@@ -55,17 +67,26 @@ export function Footer() {
               <h3 className="text-lg font-semibold">Casos de Sucesso</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/casewittel" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="/casewittel"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Wittel
                   </Link>
                 </li>
                 <li>
-                  <Link href="/casetecfil" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="/casetecfil"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Tecfil
                   </Link>
                 </li>
                 <li>
-                  <Link href="/casenatacha" className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href="/casenatacha"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     Natacha
                   </Link>
                 </li>
@@ -77,13 +98,19 @@ export function Footer() {
               <ul className="space-y-2">
                 <li className="text-gray-400">
                   <span className="block">Email:</span>
-                  <a href="mailto:luizhenrique.pinotti@gmail.com" className="hover:text-white transition-colors">
+                  <a
+                    href="mailto:luizhenrique.pinotti@gmail.com"
+                    className="hover:text-white transition-colors"
+                  >
                     luizhenrique.pinotti@gmail.com
                   </a>
                 </li>
                 <li className="text-gray-400">
                   <span className="block">Telefone:</span>
-                  <a href="tel:+5511988776655" className="hover:text-white transition-colors">
+                  <a
+                    href="tel:+5511988776655"
+                    className="hover:text-white transition-colors"
+                  >
                     +55 (11) 98877-6655
                   </a>
                 </li>
@@ -93,7 +120,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Automatizando. Todos os direitos reservados.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Automatizando. Todos os direitos
+            reservados.
+          </p>
         </div>
       </div>
     </footer>

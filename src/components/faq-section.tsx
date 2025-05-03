@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CircleHelp } from "lucide-react";
+import Link from "next/link";
 
 export function FAQSection() {
   return (
@@ -62,9 +62,10 @@ export function FAQSection() {
                   "Todas as nossas soluções incluem monitoramento 24/7 e planos de contingência. Em caso de falhas, nosso sistema de alerta identifica o problema imediatamente e nossa equipe técnica atua rapidamente para resolver a situação. Também mantemos backups regulares e processos alternativos para garantir a continuidade do seu negócio em qualquer circunstância.",
               },
               {
-                question: "Preciso de conhecimentos técnicos para usar os sistemas automatizados?",
+                question:
+                  "Preciso de conhecimentos técnicos para usar os sistemas automatizados?",
                 answer:
-                  "Não. Nossas soluções são desenvolvidas com foco na usabilidade, e criamos interfaces intuitivas que não exigem conhecimentos técnicos para operação. Além disso, oferecemos treinamentos completos para sua equipe e suporte contínuo para garantir que todos possam aproveitar ao máximo os benefícios da automação, independentemente do nível técnico."
+                  "Não. Nossas soluções são desenvolvidas com foco na usabilidade, e criamos interfaces intuitivas que não exigem conhecimentos técnicos para operação. Além disso, oferecemos treinamentos completos para sua equipe e suporte contínuo para garantir que todos possam aproveitar ao máximo os benefícios da automação, independentemente do nível técnico.",
               },
             ].map((item, i) => (
               <AccordionItem key={item.question} value={`item-${i}`}>

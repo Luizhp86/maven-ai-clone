@@ -1,8 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useEffect, useState } from "react";
 
 interface ExampleSubmission {
   name: string;
@@ -24,13 +31,16 @@ export default function AdminSubmissions() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-2xl font-bold mb-6">Admin Dashboard - Form Submissions</h1>
+      <h1 className="text-2xl font-bold mb-6">
+        Admin Dashboard - Form Submissions
+      </h1>
 
       <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-md text-yellow-800">
         <p className="font-medium">Static Site Notice</p>
         <p className="text-sm mt-1">
-          This is a static site export, so form submissions would normally be handled by Netlify Forms.
-          In a real implementation, you would use Netlify functions or a separate backend to retrieve form submissions.
+          This is a static site export, so form submissions would normally be
+          handled by Netlify Forms. In a real implementation, you would use
+          Netlify functions or a separate backend to retrieve form submissions.
         </p>
       </div>
 
@@ -43,7 +53,9 @@ export default function AdminSubmissions() {
           <Card>
             <CardHeader>
               <CardTitle>Exemplo de Submissão</CardTitle>
-              <CardDescription>Demonstração de como os dados seriam exibidos</CardDescription>
+              <CardDescription>
+                Demonstração de como os dados seriam exibidos
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
@@ -70,12 +82,16 @@ export default function AdminSubmissions() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" size="sm" disabled>Ação Indisponível</Button>
+              <Button variant="outline" size="sm" disabled>
+                Ação Indisponível
+              </Button>
             </CardFooter>
           </Card>
 
           <div className="text-center text-gray-500 text-sm mt-4">
-            Em um site real, as submissões do formulário seriam armazenadas no Netlify Forms e poderiam ser acessadas através do painel de administração do Netlify.
+            Em um site real, as submissões do formulário seriam armazenadas no
+            Netlify Forms e poderiam ser acessadas através do painel de
+            administração do Netlify.
           </div>
         </div>
       )}

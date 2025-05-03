@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export function HeroSection() {
@@ -15,14 +15,14 @@ export function HeroSection() {
     const cta = ctaRef.current;
 
     if (firstText && secondText && cta) {
-      firstText.classList.add('animate-fadeInUp');
+      firstText.classList.add("animate-fadeInUp");
 
       setTimeout(() => {
-        secondText.classList.add('animate-fadeInUp');
+        secondText.classList.add("animate-fadeInUp");
       }, 300);
 
       setTimeout(() => {
-        cta.classList.add('animate-fadeInUp');
+        cta.classList.add("animate-fadeInUp");
       }, 600);
     }
   }, []);
@@ -36,30 +36,37 @@ export function HeroSection() {
               ref={firstTextRef}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight opacity-0"
             >
-              Reduza custos e <span className="text-auto-blue">aumente a eficiência</span>
+              Reduza custos e{" "}
+              <span className="text-auto-blue">aumente a eficiência</span>
             </h1>
 
             <p
               ref={secondTextRef}
               className="text-lg md:text-xl text-gray-600 opacity-0"
             >
-              Automatize processos repetitivos com inteligência artificial e reduza até 70% dos custos com mão de obra,
-              eliminando erros e aumentando a produtividade da sua empresa.
+              Automatize processos repetitivos com inteligência artificial e
+              reduza até 70% dos custos com mão de obra, eliminando erros e
+              aumentando a produtividade da sua empresa.
             </p>
 
             <div
               ref={ctaRef}
               className="flex flex-col sm:flex-row gap-4 opacity-0"
             >
-              <Button asChild size="lg" className="bg-auto-blue hover:bg-auto-blue/90 text-lg px-8">
-                <Link href="/#contato">
-                  Fale Conosco
-                </Link>
+              <Button
+                asChild
+                size="lg"
+                className="bg-auto-blue hover:bg-auto-blue/90 text-lg px-8"
+              >
+                <Link href="/#contato">Fale Conosco</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                <Link href="/services">
-                  Nossos Serviços
-                </Link>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="text-lg px-8"
+              >
+                <Link href="/services">Nossos Serviços</Link>
               </Button>
             </div>
           </div>
@@ -80,23 +87,29 @@ export function HeroSection() {
               <div className="space-y-4">
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">IA</span> &gt; Analisando processos manuais repetitivos...
+                    <span className="text-auto-blue font-bold">IA</span> &gt;
+                    Analisando processos manuais repetitivos...
                   </p>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">IA</span> &gt; Identificando gargalos de produtividade
+                    <span className="text-auto-blue font-bold">IA</span> &gt;
+                    Identificando gargalos de produtividade
                   </p>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">IA</span> &gt; Criando solução automatizada
+                    <span className="text-auto-blue font-bold">IA</span> &gt;
+                    Criando solução automatizada
                   </p>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">IA</span> &gt; Resultados:
-                    <span className="ml-2 text-green-500">Economia de 70% em custos com pessoal</span>
+                    <span className="text-auto-blue font-bold">IA</span> &gt;
+                    Resultados:
+                    <span className="ml-2 text-green-500">
+                      Economia de 70% em custos com pessoal
+                    </span>
                   </p>
                 </div>
               </div>

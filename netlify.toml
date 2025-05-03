@@ -12,7 +12,7 @@
 
 [forms]
   [forms.contact]
-    name = "Maven AI Contact Form"
+    name = "Automatizando Contact Form"
 
     [forms.contact.notifications]
       email = "luizhenrique.pinotti@gmail.com"

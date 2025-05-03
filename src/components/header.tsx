@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,19 +23,32 @@ export function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-xl font-bold text-auto-blue leading-tight">Automatizando</span>
-            <span className="text-xs text-gray-600 -mt-1">sua empresa com IA</span>
+            <span className="text-xl font-bold text-auto-blue leading-tight">
+              Automatizando
+            </span>
+            <span className="text-xs text-gray-600 -mt-1">
+              sua empresa com IA
+            </span>
           </div>
         </Link>
 
         <nav className="hidden md:flex gap-6">
-          <Link href="/services" className="text-foreground hover:text-auto-blue transition-colors">
+          <Link
+            href="/services"
+            className="text-foreground hover:text-auto-blue transition-colors"
+          >
             Serviços
           </Link>
-          <Link href="/#cases" className="text-foreground hover:text-auto-blue transition-colors">
+          <Link
+            href="/#cases"
+            className="text-foreground hover:text-auto-blue transition-colors"
+          >
             Casos de Sucesso
           </Link>
-          <Link href="/#contato" className="text-foreground hover:text-auto-blue transition-colors">
+          <Link
+            href="/#contato"
+            className="text-foreground hover:text-auto-blue transition-colors"
+          >
             Contato
           </Link>
         </nav>

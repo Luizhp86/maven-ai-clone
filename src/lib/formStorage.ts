@@ -24,12 +24,16 @@ const submissions: FormSubmission[] = [];
 
 // Generate a simple ID
 function generateId(): string {
-  return Math.random().toString(36).substring(2, 15) +
-         Math.random().toString(36).substring(2, 15);
+  return (
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15)
+  );
 }
 
 // Store a submission
-export function storeSubmission(data: Omit<FormSubmission, 'id' | 'createdAt'>): FormSubmission {
+export function storeSubmission(
+  data: Omit<FormSubmission, "id" | "createdAt">,
+): FormSubmission {
   const submission: FormSubmission = {
     ...data,
     id: generateId(),
@@ -39,7 +43,7 @@ export function storeSubmission(data: Omit<FormSubmission, 'id' | 'createdAt'>):
   submissions.push(submission);
 
   // For debugging, log all submissions
-  console.log('Current submissions:', submissions);
+  console.log("Current submissions:", submissions);
 
   return submission;
 }
@@ -51,7 +55,7 @@ export function getAllSubmissions(): FormSubmission[] {
 
 // Get a submission by ID
 export function getSubmissionById(id: string): FormSubmission | undefined {
-  return submissions.find(sub => sub.id === id);
+  return submissions.find((sub) => sub.id === id);
 }
 
 // This would be a good place for additional helper functions like:

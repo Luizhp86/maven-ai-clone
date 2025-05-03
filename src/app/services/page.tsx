@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Check, X } from "lucide-react";
+import Link from "next/link";
 
 // Define types for our pricing plans
 interface PricingFeature {
@@ -34,14 +34,14 @@ export default function ServicesPage() {
           "Integração com WhatsApp",
           "Integrações básicas (Leads para CRM)",
           "Suporte por email",
-          "Treinamento inicial"
+          "Treinamento inicial",
         ],
         notIncluded: [
           "Integrações avançadas",
           "Customização avançada de fluxos",
           "Análise de sentimento",
           "Suporte 24/7",
-          "Gerenciamento de campanhas"
+          "Gerenciamento de campanhas",
         ],
         popular: false,
       },
@@ -57,12 +57,12 @@ export default function ServicesPage() {
           "Fluxos personalizados de conversação",
           "Relatórios detalhados de desempenho",
           "Suporte prioritário em horário comercial",
-          "Treinamentos mensais"
+          "Treinamentos mensais",
         ],
         notIncluded: [
           "Customização completa de persona",
           "Suporte 24/7",
-          "Gerenciamento de campanhas"
+          "Gerenciamento de campanhas",
         ],
         popular: true,
       },
@@ -79,11 +79,11 @@ export default function ServicesPage() {
           "Análise avançada de sentimento",
           "Suporte 24/7 dedicado",
           "SLA garantido",
-          "Gerenciamento completo da solução"
+          "Gerenciamento completo da solução",
         ],
         notIncluded: [],
         popular: false,
-      }
+      },
     ],
     crm: [
       {
@@ -96,13 +96,13 @@ export default function ServicesPage() {
           "Integrações com até 2 plataformas",
           "Rastreamento de jornada do cliente",
           "Dashboards básicos",
-          "Suporte por 30 dias"
+          "Suporte por 30 dias",
         ],
         notIncluded: [
           "Integrações com mais de 2 plataformas",
           "Automações avançadas",
           "Treinamento da equipe",
-          "Suporte contínuo"
+          "Suporte contínuo",
         ],
         popular: false,
       },
@@ -118,12 +118,12 @@ export default function ServicesPage() {
           "Automações personalizadas",
           "Dashboards personalizados",
           "Treinamento da equipe",
-          "Suporte por 90 dias"
+          "Suporte por 90 dias",
         ],
         notIncluded: [
           "Integrações com mais de 5 plataformas",
           "Suporte contínuo após 90 dias",
-          "Desenvolvimento de funcionalidades específicas"
+          "Desenvolvimento de funcionalidades específicas",
         ],
         popular: true,
       },
@@ -131,7 +131,8 @@ export default function ServicesPage() {
         name: "Enterprise",
         price: "Sob consulta",
         period: "",
-        description: "Para empresas que necessitam de soluções altamente personalizadas",
+        description:
+          "Para empresas que necessitam de soluções altamente personalizadas",
         features: [
           "Solução completamente customizada",
           "Integrações ilimitadas",
@@ -139,11 +140,11 @@ export default function ServicesPage() {
           "Dashboards analíticos avançados",
           "Treinamento completo da equipe",
           "Suporte dedicado por 12 meses",
-          "Manutenção e updates contínuos"
+          "Manutenção e updates contínuos",
         ],
         notIncluded: [],
         popular: false,
-      }
+      },
     ],
     marketing: [
       {
@@ -156,14 +157,14 @@ export default function ServicesPage() {
           "Email marketing automatizado",
           "Segmentação básica de leads",
           "Relatórios mensais",
-          "Suporte por email"
+          "Suporte por email",
         ],
         notIncluded: [
           "Automações multi-canal",
           "Segmentação avançada",
           "Criação de conteúdo",
           "Integrações customizadas",
-          "Estratégia de conteúdo"
+          "Estratégia de conteúdo",
         ],
         popular: false,
       },
@@ -179,12 +180,12 @@ export default function ServicesPage() {
           "Nurturing personalizado",
           "Lead scoring automatizado",
           "Relatórios semanais",
-          "Suporte prioritário"
+          "Suporte prioritário",
         ],
         notIncluded: [
           "Criação de conteúdo completo",
           "Estratégia completa de marketing",
-          "Gerenciamento de campanhas pagas"
+          "Gerenciamento de campanhas pagas",
         ],
         popular: true,
       },
@@ -202,19 +203,22 @@ export default function ServicesPage() {
           "Relatórios personalizados em tempo real",
           "Criação de conteúdo incluída",
           "Estratégia completa de inbound marketing",
-          "Suporte 24/7"
+          "Suporte 24/7",
         ],
         notIncluded: [],
         popular: false,
-      }
-    ]
+      },
+    ],
   };
 
   // Render a pricing plan card
-  const PricingCard = ({ plan, category }: { plan: PricingFeature, category: string }) => (
+  const PricingCard = ({
+    plan,
+    category,
+  }: { plan: PricingFeature; category: string }) => (
     <div
       className={`relative flex flex-col rounded-lg shadow-lg ${
-        plan.popular ? 'border-2 border-maven-blue' : 'border border-gray-200'
+        plan.popular ? "border-2 border-maven-blue" : "border border-gray-200"
       } bg-white overflow-hidden`}
     >
       {plan.popular && (
@@ -246,7 +250,9 @@ export default function ServicesPage() {
 
         {plan.notIncluded.length > 0 && (
           <div className="mt-6 border-t border-gray-200 pt-6">
-            <h4 className="text-sm font-medium text-gray-500 mb-2">Não incluído:</h4>
+            <h4 className="text-sm font-medium text-gray-500 mb-2">
+              Não incluído:
+            </h4>
             <ul className="space-y-3">
               {plan.notIncluded.map((feature) => (
                 <li key={feature} className="flex items-start text-gray-400">
@@ -261,7 +267,9 @@ export default function ServicesPage() {
 
       <div className="p-6">
         <Link href="/#contato">
-          <Button className={`w-full ${plan.popular ? 'bg-maven-blue hover:bg-maven-blue/90' : 'bg-gray-800 hover:bg-gray-700'}`}>
+          <Button
+            className={`w-full ${plan.popular ? "bg-maven-blue hover:bg-maven-blue/90" : "bg-gray-800 hover:bg-gray-700"}`}
+          >
             Entre em contato
           </Button>
         </Link>
@@ -273,9 +281,12 @@ export default function ServicesPage() {
     <div className="pt-24 pb-16">
       <div className="container">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nossos Serviços e Planos</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Nossos Serviços e Planos
+          </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Escolha a solução ideal para transformar seu negócio com inteligência artificial
+            Escolha a solução ideal para transformar seu negócio com
+            inteligência artificial
           </p>
         </div>
 
@@ -290,7 +301,11 @@ export default function ServicesPage() {
             <TabsContent key={category} value={category}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {plans.map((plan) => (
-                  <PricingCard key={plan.name} plan={plan} category={category} />
+                  <PricingCard
+                    key={plan.name}
+                    plan={plan}
+                    category={category}
+                  />
                 ))}
               </div>
             </TabsContent>
@@ -298,57 +313,89 @@ export default function ServicesPage() {
         </Tabs>
 
         <div className="mt-24">
-          <h2 className="text-3xl font-bold mb-8 text-center">Comparação Detalhada de Recursos</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            Comparação Detalhada de Recursos
+          </h2>
 
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-200">
             <table className="w-full text-sm text-left">
               <thead className="bg-gray-50 text-gray-700">
                 <tr>
-                  <th scope="col" className="px-6 py-4">Recurso</th>
-                  <th scope="col" className="px-6 py-4 text-center">Básico</th>
-                  <th scope="col" className="px-6 py-4 text-center bg-blue-50">Profissional</th>
-                  <th scope="col" className="px-6 py-4 text-center">Enterprise</th>
+                  <th scope="col" className="px-6 py-4">
+                    Recurso
+                  </th>
+                  <th scope="col" className="px-6 py-4 text-center">
+                    Básico
+                  </th>
+                  <th scope="col" className="px-6 py-4 text-center bg-blue-50">
+                    Profissional
+                  </th>
+                  <th scope="col" className="px-6 py-4 text-center">
+                    Enterprise
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="bg-white border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Canais de Comunicação</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Canais de Comunicação
+                  </th>
                   <td className="px-6 py-4 text-center">1 canal</td>
                   <td className="px-6 py-4 text-center bg-blue-50">3 canais</td>
                   <td className="px-6 py-4 text-center">Ilimitado</td>
                 </tr>
                 <tr className="bg-gray-50 border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Volume de Mensagens</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Volume de Mensagens
+                  </th>
                   <td className="px-6 py-4 text-center">1.000/mês</td>
-                  <td className="px-6 py-4 text-center bg-blue-50">5.000/mês</td>
+                  <td className="px-6 py-4 text-center bg-blue-50">
+                    5.000/mês
+                  </td>
                   <td className="px-6 py-4 text-center">Ilimitado</td>
                 </tr>
                 <tr className="bg-white border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Personalização de Fluxos</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Personalização de Fluxos
+                  </th>
                   <td className="px-6 py-4 text-center">Básica</td>
                   <td className="px-6 py-4 text-center bg-blue-50">Avançada</td>
                   <td className="px-6 py-4 text-center">Completa</td>
                 </tr>
                 <tr className="bg-gray-50 border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Integrações</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Integrações
+                  </th>
                   <td className="px-6 py-4 text-center">1-2</td>
                   <td className="px-6 py-4 text-center bg-blue-50">3-5</td>
                   <td className="px-6 py-4 text-center">Ilimitadas</td>
                 </tr>
                 <tr className="bg-white border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Suporte</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Suporte
+                  </th>
                   <td className="px-6 py-4 text-center">Email</td>
-                  <td className="px-6 py-4 text-center bg-blue-50">Prioritário</td>
+                  <td className="px-6 py-4 text-center bg-blue-50">
+                    Prioritário
+                  </td>
                   <td className="px-6 py-4 text-center">Dedicado 24/7</td>
                 </tr>
                 <tr className="bg-gray-50 border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Análise de Dados</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Análise de Dados
+                  </th>
                   <td className="px-6 py-4 text-center">Relatórios Básicos</td>
-                  <td className="px-6 py-4 text-center bg-blue-50">Dashboards Personalizados</td>
-                  <td className="px-6 py-4 text-center">Análise Avançada em Tempo Real</td>
+                  <td className="px-6 py-4 text-center bg-blue-50">
+                    Dashboards Personalizados
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    Análise Avançada em Tempo Real
+                  </td>
                 </tr>
                 <tr className="bg-white border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">SLA Garantido</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    SLA Garantido
+                  </th>
                   <td className="px-6 py-4 text-center">
                     <X className="h-5 w-5 text-red-400 mx-auto" />
                   </td>
@@ -360,10 +407,16 @@ export default function ServicesPage() {
                   </td>
                 </tr>
                 <tr className="bg-gray-50 border-b">
-                  <th scope="row" className="px-6 py-4 font-medium">Treinamento e Onboarding</th>
+                  <th scope="row" className="px-6 py-4 font-medium">
+                    Treinamento e Onboarding
+                  </th>
                   <td className="px-6 py-4 text-center">Básico (2h)</td>
-                  <td className="px-6 py-4 text-center bg-blue-50">Completo (8h)</td>
-                  <td className="px-6 py-4 text-center">Premium (Sob demanda)</td>
+                  <td className="px-6 py-4 text-center bg-blue-50">
+                    Completo (8h)
+                  </td>
+                  <td className="px-6 py-4 text-center">
+                    Premium (Sob demanda)
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -371,9 +424,12 @@ export default function ServicesPage() {
         </div>
 
         <div className="mt-24 text-center">
-          <h2 className="text-3xl font-bold mb-6">Pronto para transformar seu negócio?</h2>
+          <h2 className="text-3xl font-bold mb-6">
+            Pronto para transformar seu negócio?
+          </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Nossa equipe está pronta para entender suas necessidades e desenvolver a solução ideal para sua empresa.
+            Nossa equipe está pronta para entender suas necessidades e
+            desenvolver a solução ideal para sua empresa.
           </p>
           <Link href="/#contato">
             <Button className="bg-maven-blue hover:bg-maven-blue/90 px-8 py-6 text-lg h-auto">
@@ -383,34 +439,58 @@ export default function ServicesPage() {
         </div>
 
         <div className="mt-24 bg-gray-50 p-8 rounded-lg">
-          <h2 className="text-2xl font-bold mb-6">Perguntas Frequentes sobre Serviços</h2>
+          <h2 className="text-2xl font-bold mb-6">
+            Perguntas Frequentes sobre Serviços
+          </h2>
 
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-bold mb-2">Quanto tempo leva para implementar uma solução?</h3>
+              <h3 className="text-lg font-bold mb-2">
+                Quanto tempo leva para implementar uma solução?
+              </h3>
               <p className="text-gray-600">
-                O tempo de implementação varia de acordo com a complexidade do projeto. Soluções básicas podem ser implementadas em 2-3 semanas, enquanto projetos mais complexos podem levar de 4-8 semanas. Durante a consultoria inicial, forneceremos um cronograma detalhado para o seu projeto específico.
+                O tempo de implementação varia de acordo com a complexidade do
+                projeto. Soluções básicas podem ser implementadas em 2-3
+                semanas, enquanto projetos mais complexos podem levar de 4-8
+                semanas. Durante a consultoria inicial, forneceremos um
+                cronograma detalhado para o seu projeto específico.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold mb-2">Os preços incluem personalização para o meu negócio?</h3>
+              <h3 className="text-lg font-bold mb-2">
+                Os preços incluem personalização para o meu negócio?
+              </h3>
               <p className="text-gray-600">
-                Sim! Todos os nossos planos incluem personalização para se adequar às necessidades específicas do seu negócio. O nível de personalização varia conforme o plano escolhido, com opções mais avançadas disponíveis nos planos Profissional e Enterprise.
+                Sim! Todos os nossos planos incluem personalização para se
+                adequar às necessidades específicas do seu negócio. O nível de
+                personalização varia conforme o plano escolhido, com opções mais
+                avançadas disponíveis nos planos Profissional e Enterprise.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold mb-2">Posso fazer upgrade do meu plano no futuro?</h3>
+              <h3 className="text-lg font-bold mb-2">
+                Posso fazer upgrade do meu plano no futuro?
+              </h3>
               <p className="text-gray-600">
-                Absolutamente! À medida que seu negócio cresce, suas necessidades podem mudar. Oferecemos um processo simples de upgrade para que você possa evoluir sua solução conforme necessário, mantendo toda a configuração e dados existentes.
+                Absolutamente! À medida que seu negócio cresce, suas
+                necessidades podem mudar. Oferecemos um processo simples de
+                upgrade para que você possa evoluir sua solução conforme
+                necessário, mantendo toda a configuração e dados existentes.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold mb-2">Oferecem suporte contínuo após a implementação?</h3>
+              <h3 className="text-lg font-bold mb-2">
+                Oferecem suporte contínuo após a implementação?
+              </h3>
               <p className="text-gray-600">
-                Sim, todos os nossos planos incluem algum nível de suporte contínuo. O plano Enterprise oferece o suporte mais abrangente, com uma equipe dedicada disponível 24/7. Também oferecemos pacotes de suporte estendido que podem ser adicionados a qualquer plano.
+                Sim, todos os nossos planos incluem algum nível de suporte
+                contínuo. O plano Enterprise oferece o suporte mais abrangente,
+                com uma equipe dedicada disponível 24/7. Também oferecemos
+                pacotes de suporte estendido que podem ser adicionados a
+                qualquer plano.
               </p>
             </div>
           </div>

@@ -1,19 +1,34 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const formSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
   email: z.string().email("Email inválido"),
   phone: z.string().min(10, "Telefone deve ter pelo menos 10 caracteres"),
-  company: z.string().min(2, "Nome da empresa deve ter pelo menos 2 caracteres"),
+  company: z
+    .string()
+    .min(2, "Nome da empresa deve ter pelo menos 2 caracteres"),
 });
 
 export function ContactFormSection() {
@@ -51,9 +66,12 @@ export function ContactFormSection() {
     <section className="bg-[#f7f7f7] py-16">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-[#0c2340] mb-4">Entre em contato</h2>
+          <h2 className="text-3xl font-bold text-[#0c2340] mb-4">
+            Entre em contato
+          </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Preencha o formulário abaixo para entrar em contato conosco e saber como podemos ajudar sua empresa.
+            Preencha o formulário abaixo para entrar em contato conosco e saber
+            como podemos ajudar sua empresa.
           </p>
         </div>
 
@@ -68,10 +86,15 @@ export function ContactFormSection() {
               className="space-y-6"
             >
               <input type="hidden" name="form-name" value="contact" />
-              <input type="hidden" name="recipient" value="luizhenrique.pinotti@gmail.com" />
+              <input
+                type="hidden"
+                name="recipient"
+                value="luizhenrique.pinotti@gmail.com"
+              />
               <p className="hidden">
                 <label>
-                  Don't fill this out if you're human: <input name="bot-field" />
+                  Don't fill this out if you're human:{" "}
+                  <input name="bot-field" />
                 </label>
               </p>
 
@@ -97,7 +120,11 @@ export function ContactFormSection() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="seu@email.com" name="email" />
+                        <Input
+                          {...field}
+                          placeholder="seu@email.com"
+                          name="email"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -111,7 +138,11 @@ export function ContactFormSection() {
                     <FormItem>
                       <FormLabel>Telefone</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="(00) 00000-0000" name="phone" />
+                        <Input
+                          {...field}
+                          placeholder="(00) 00000-0000"
+                          name="phone"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -125,7 +156,11 @@ export function ContactFormSection() {
                     <FormItem>
                       <FormLabel>Empresa</FormLabel>
                       <FormControl>
-                        <Input {...field} placeholder="Nome da sua empresa" name="company" />
+                        <Input
+                          {...field}
+                          placeholder="Nome da sua empresa"
+                          name="company"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

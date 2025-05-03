@@ -1,8 +1,8 @@
 import "@/app/globals.css";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 import type { Metadata, Viewport } from "next";
 import ClientBody from "./ClientBody";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 
 export const viewport: Viewport = {
   themeColor: "#ffffff",
@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "Automatizando - Redução de custos com IA para sua empresa",
   description:
     "Reduza até 70% dos custos com mão de obra automatizando processos repetitivos com Inteligência Artificial. Conheça nossas soluções e maximize seus resultados.",
+  icons: {
+    icon: "/images/automatizando-logo.png",
+    apple: "/images/automatizando-logo.png",
+  },
 };
 
 export default function RootLayout({
