@@ -69,33 +69,32 @@ export function HowItWorksSection() {
             mensuráveis.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div className="bg-white p-8 rounded-lg shadow-md flex items-center justify-center h-64">
-              <div className="w-32 h-32 bg-auto-blue rounded-full flex items-center justify-center">
-                <p className="text-white font-bold">Seu projeto</p>
+            <div className="bg-white p-8 rounded-lg shadow-md flex items-center justify-center h-64 overflow-hidden">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/robotic-hand.png"
+                  alt="Robô trabalhando em interface digital"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <p className="text-white font-bold text-lg">De processos manuais...</p>
+                </div>
               </div>
             </div>
-            <div className="bg-white p-8 rounded-lg shadow-md flex items-center justify-center h-64 relative">
-              <Image
-                src="/images/automatizando-logo.png"
-                alt="Automatização"
-                width={64}
-                height={64}
-                className="absolute top-10 left-10"
-              />
-              <Image
-                src="/images/automatizando-logo.png"
-                alt="Automatização"
-                width={64}
-                height={64}
-                className="absolute bottom-10 right-10"
-              />
-              <div className="border-4 border-dashed border-auto-blue/40 p-6 rounded-lg">
+            <div className="bg-white p-8 rounded-lg shadow-md flex items-center justify-center h-64 relative overflow-hidden">
+              <div className="relative w-full h-full">
                 <Image
-                  src="/images/automatizando-logo.png"
-                  alt="Automatização"
-                  width={100}
-                  height={100}
+                  src="/images/automation-robot.png"
+                  alt="Automação com IA"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <p className="text-white font-bold text-lg">...para soluções automatizadas com IA</p>
+                </div>
               </div>
             </div>
           </div>
