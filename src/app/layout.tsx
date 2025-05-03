@@ -11,9 +11,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Automatizando - Soluções de Automação para Empresas",
+  title: "Automatizando - Redução de custos com IA para sua empresa",
   description:
-    "Automatize processos, aumente a eficiência e reduza custos com nossas soluções personalizadas de automação para o seu negócio.",
+    "Reduza até 70% dos custos com mão de obra automatizando processos repetitivos com Inteligência Artificial. Conheça nossas soluções e maximize seus resultados.",
 };
 
 export default function RootLayout({

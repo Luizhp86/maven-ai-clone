@@ -46,15 +46,15 @@ export function HeroSection() {
               ref={firstTextRef}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight opacity-0 translate-y-8 transition-all duration-700"
             >
-              Automatize seus processos e <span className="text-auto-blue">potencialize resultados</span>
+              Reduza custos e <span className="text-auto-blue">aumente a eficiência</span>
             </h1>
 
             <p
               ref={secondTextRef}
               className="text-lg md:text-xl text-gray-600 opacity-0 translate-y-8 transition-all duration-700 delay-300"
             >
-              Através de soluções inteligentes, transformamos processos manuais repetitivos em fluxos automatizados,
-              aumentando a eficiência, reduzindo erros e liberando sua equipe para focar no que realmente importa.
+              Automatize processos repetitivos com inteligência artificial e reduza até 70% dos custos com mão de obra,
+              eliminando erros e aumentando a produtividade da sua empresa.
             </p>
 
             <div
@@ -75,14 +75,14 @@ export function HeroSection() {
           </div>
 
           <div className="hidden md:block relative">
-            <div className="absolute -left-4 -top-4 w-72 h-72 bg-auto-blue/10 rounded-full filter blur-3xl opacity-70"></div>
-            <div className="absolute -right-4 -bottom-4 w-72 h-72 bg-auto-blue/10 rounded-full filter blur-3xl opacity-70"></div>
+            <div className="absolute -left-4 -top-4 w-72 h-72 bg-auto-blue/10 rounded-full filter blur-3xl opacity-70" />
+            <div className="absolute -right-4 -bottom-4 w-72 h-72 bg-auto-blue/10 rounded-full filter blur-3xl opacity-70" />
             <div className="relative bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
               <div className="flex justify-between items-center border-b border-gray-100 pb-4 mb-6">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                  <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                  <div className="h-3 w-3 rounded-full bg-green-400"></div>
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-green-400" />
                 </div>
                 <div className="text-xs text-gray-500">Automatizando.exe</div>
               </div>
@@ -90,23 +90,23 @@ export function HeroSection() {
               <div className="space-y-4">
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">Automatizando</span> &gt; Iniciando processo...
+                    <span className="text-auto-blue font-bold">IA</span> &gt; Analisando processos manuais repetitivos...
                   </p>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">Automatizando</span> &gt; Analisando fluxos de trabalho
+                    <span className="text-auto-blue font-bold">IA</span> &gt; Identificando gargalos de produtividade
                   </p>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">Automatizando</span> &gt; Identificando oportunidades
+                    <span className="text-auto-blue font-bold">IA</span> &gt; Criando solução automatizada
                   </p>
                 </div>
                 <div className="p-3 bg-gray-50 rounded-lg">
                   <p className="text-sm text-gray-700 font-mono">
-                    <span className="text-auto-blue font-bold">Automatizando</span> &gt; Otimização concluída!
-                    <span className="ml-2 text-green-500">Eficiência +78%</span>
+                    <span className="text-auto-blue font-bold">IA</span> &gt; Resultados:
+                    <span className="ml-2 text-green-500">Economia de 70% em custos com pessoal</span>
                   </p>
                 </div>
               </div>

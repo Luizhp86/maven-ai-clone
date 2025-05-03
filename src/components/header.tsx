@@ -22,7 +22,10 @@ export function Header() {
               height={32}
             />
           </div>
-          <span className="text-2xl font-bold text-auto-blue">Automatizando</span>
+          <div className="flex flex-col">
+            <span className="text-xl font-bold text-auto-blue leading-tight">Automatizando</span>
+            <span className="text-xs text-gray-600 -mt-1">sua empresa com IA</span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex gap-6">

@@ -19,10 +19,13 @@ export function Footer() {
                   className="brightness-200 invert"
                 />
               </div>
-              <span className="text-xl font-bold">Automatizando</span>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold">Automatizando</span>
+                <span className="text-xs text-gray-400">sua empresa com IA</span>
+              </div>
             </div>
             <p className="text-gray-400">
-              Soluções inteligentes para automatizar processos e aumentar a eficiência do seu negócio.
+              Reduza até 70% dos custos com mão de obra através da automação de processos repetitivos com inteligência artificial.
             </p>
           </div>
 
