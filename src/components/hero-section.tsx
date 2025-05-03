@@ -15,26 +15,16 @@ export function HeroSection() {
     const cta = ctaRef.current;
 
     if (firstText && secondText && cta) {
-      // Simple CSS animations with classes
-      firstText.classList.add('animate-in');
+      firstText.classList.add('animate-fadeInUp');
 
       setTimeout(() => {
-        secondText.classList.add('animate-in');
+        secondText.classList.add('animate-fadeInUp');
       }, 300);
 
       setTimeout(() => {
-        cta.classList.add('animate-in');
+        cta.classList.add('animate-fadeInUp');
       }, 600);
     }
-
-    return () => {
-      // Clean up animations if needed
-      if (firstText && secondText && cta) {
-        firstText.classList.remove('animate-in');
-        secondText.classList.remove('animate-in');
-        cta.classList.remove('animate-in');
-      }
-    };
   }, []);
 
   return (
@@ -44,14 +34,14 @@ export function HeroSection() {
           <div className="space-y-8">
             <h1
               ref={firstTextRef}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight opacity-0 translate-y-8 transition-all duration-700"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight opacity-0"
             >
               Reduza custos e <span className="text-auto-blue">aumente a eficiência</span>
             </h1>
 
             <p
               ref={secondTextRef}
-              className="text-lg md:text-xl text-gray-600 opacity-0 translate-y-8 transition-all duration-700 delay-300"
+              className="text-lg md:text-xl text-gray-600 opacity-0"
             >
               Automatize processos repetitivos com inteligência artificial e reduza até 70% dos custos com mão de obra,
               eliminando erros e aumentando a produtividade da sua empresa.
@@ -59,7 +49,7 @@ export function HeroSection() {
 
             <div
               ref={ctaRef}
-              className="flex flex-col sm:flex-row gap-4 opacity-0 translate-y-8 transition-all duration-700 delay-600"
+              className="flex flex-col sm:flex-row gap-4 opacity-0"
             >
               <Button asChild size="lg" className="bg-auto-blue hover:bg-auto-blue/90 text-lg px-8">
                 <Link href="/#contato">
