@@ -1,0 +1,18 @@
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+
+[build]
+  command = "bun run build"
+  publish = "out"
+
+[build.environment]
+  NETLIFY_USE_YARN = "false"
+  NETLIFY_USE_NPM = "false"
+  NODE_VERSION = "18"
+
+[forms]
+  [forms.contact]
+    name = "Maven AI Contact Form"
+
+    [forms.contact.notifications]
+      email = "luizhenrique.pinotti@gmail.com"
